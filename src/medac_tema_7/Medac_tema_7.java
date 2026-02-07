@@ -23,36 +23,44 @@ public class Medac_tema_7 {
      */
     
     public static void main(String[] args) {
-        System.out.println("Lets learn OOP with Taxonomy!");
         
+        // Introduction message
+        System.out.println("Welcome to the ZOO!\n");
+        
+        // Variables
         boolean running_program = true;
-        
         int user_option;
-        
         Scanner sn_keyboard = new Scanner(System.in);
         
+        // Program
         while(running_program) {
             System.out.println("Choose a option: \n");
             
-            System.out.println("1. Add animal \n");
-            System.out.println("2. Remove animal \n");
-            System.out.println("3. Clean the list \n");
-            System.out.println("4. View the list \n");
-            System.out.println("5. End program \n");
+            // Menu for the user
+            System.out.println("1. Create animal \n"); // Create (1 animal)
+            System.out.println("2. Read animal \n"); // Read (1 animal)
+            System.out.println("3. Update animal \n"); // Update (1 animal)
+            System.out.println("4. Delete animal \n"); // Delete (1 animal)
+            System.out.println("5. Delete all \n"); // Delete all animals on the list
+            System.out.println("6. View all \n"); // View all animals on the list
+            System.out.println("7. End program \n"); // Finish program
             
+            // Variable to store the user option as a integer
             user_option = sn_keyboard.nextInt();
             
             System.out.println("\nYou choose: " + user_option);
             
+            // Logic of the program based on the user option
             switch(user_option) {
                 case 1 -> System.out.println("1. Add animal\n");
                 case 2 -> System.out.println("2. Remove animal\n");
-                case 3 -> System.out.println("3. Clean animal\n");
+                case 3 -> System.out.println("3. Clean the list\n");
                 case 4 -> System.out.println("4. View animal\n");
                 case 5 -> running_program = false;
             }
-            
         }
+        
+        // Testing code - to see if it's working
 
         Animal Dog = new Animal("Rufus", 7, 1.70, 20.0, new Taxonomy(
                 "Eukaryota",
@@ -65,14 +73,6 @@ public class Medac_tema_7 {
                 "lupus",
                 "familiaris"
         ));
-        
-        Dog.setName("Alf");
-
-        System.out.println("\nDog name: " + Dog.getName());
-        
-        Dog.eat();
-        
-        Dog.sleep();
         
         System.out.println("\nDog taxonomy\n");
 
