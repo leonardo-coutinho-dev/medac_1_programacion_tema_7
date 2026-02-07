@@ -30,6 +30,7 @@ public class Animal {
     public Animal(String name, int age, double height, double weight, Taxonomy taxonomy) {
         this.name = name;
         this.age = age;
+        this.height = height;
         this.weight = weight;
         this.taxonomy = taxonomy;
     }
@@ -75,6 +76,11 @@ public class Animal {
     // Methods (custom)
     public void eat() {
         System.out.println("The animal is eating!");
+    }
+    
+     // Methods (custom)
+    public void drink() {
+        System.out.println("The animal is drinking water!");
     }
     
     public void sleep() {
