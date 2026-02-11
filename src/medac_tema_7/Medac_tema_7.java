@@ -74,6 +74,7 @@ public class Medac_tema_7 {
 
             // Logic of the program based on the user option
             switch (user_option) {
+                // 1. Create animal
                 case 1 -> {
                     System.out.println("\n1. Add animal\n");
 
@@ -99,6 +100,7 @@ public class Medac_tema_7 {
                     animals_list.add(new_animal);
 
                 }
+                // 2. Read animal
                 case 2 -> {
                     System.out.println("\n2. Read animal\n");
 
@@ -112,6 +114,7 @@ public class Medac_tema_7 {
                         }
                     }
                 }
+                // 3. Update animal
                 case 3 -> {
                     System.out.println("\n3. Update animal");
 
@@ -152,19 +155,29 @@ public class Medac_tema_7 {
                         case 3 -> {
                             for (Animal animal : animals_list) {
                                 if (animal.getIdNumber() == animal_id_search) {
-                                    animal.setAge(0);
+                                    animal.setHeight(0);
+                                }
+                            }
+                        }
+                        case 4 -> {
+                            for (Animal animal : animals_list) {
+                                if (animal.getIdNumber() == animal_id_search) {
+                                    animal.setWeight(0);
                                 }
                             }
                         }
                     }
 
                 }
+                // 4. Delete animal
                 case 4 -> {
                     System.out.println("\n4. Delete animal");
                 }
+                // 5. Delete (all) animals - clear the list
                 case 5 -> {
                     System.out.println("\n5. Delete all");
                 }
+                // 6. View the list (all animals)
                 case 6 -> {
                     System.out.println("\n6. View all\n");
 
@@ -172,6 +185,7 @@ public class Medac_tema_7 {
                         System.out.println((animals_list.indexOf(animal) + 1) + ". " + animal.toString());
                     }
                 }
+                // 7. End program
                 case 7 -> {
                     System.out.println("\n7. End program!");
                     running_program = false;
