@@ -43,18 +43,16 @@ public class Medac_tema_7 {
         Scanner sn_keyboard = new Scanner(System.in);
 
         // Class Animal variables
-        int animal_id;
+        int animal_id_search;
         String animal_name;
         int animal_age;
         double animal_height;
         double animal_weight;
-        
-        // Animals list variable
-        
-        ArrayList<Animal> animals_list = new ArrayList<>();
-        
-        // Class Taxonomy variables (to add later)
 
+        // Animals list variable
+        ArrayList<Animal> animals_list = new ArrayList<>();
+
+        // Class Taxonomy variables (to add later)
         // Program
         while (running_program) {
             System.out.println("\nChoose a option: \n");
@@ -70,7 +68,7 @@ public class Medac_tema_7 {
 
             // Variable to store the user option as a integer
             user_option = sn_keyboard.nextInt();
-            
+
             // -> Consume the line left behind (try to understand what happens under the hood)
             sn_keyboard.nextLine();
 
@@ -97,25 +95,69 @@ public class Medac_tema_7 {
                     Animal new_animal = new Animal(animal_name, animal_age, animal_height, animal_weight, new Taxonomy());
 
                     new_animal.toString();
-                    
+
                     animals_list.add(new_animal);
 
                 }
                 case 2 -> {
                     System.out.println("\n2. Read animal\n");
-                    
+
                     System.out.println("What is the animal's id number?\n");
-                    
-                    animal_id = sn_keyboard.nextInt();
-                    
-                    for(Animal animal : animals_list) {
-                        if (animal.getIdNumber() == animal_id) {
+
+                    animal_id_search = sn_keyboard.nextInt();
+
+                    for (Animal animal : animals_list) {
+                        if (animal.getIdNumber() == animal_id_search) {
                             System.out.println(animal.toString());
                         }
                     }
                 }
                 case 3 -> {
                     System.out.println("\n3. Update animal");
+
+                    System.out.println("What is the animal's id number?\n");
+
+                    animal_id_search = sn_keyboard.nextInt();
+
+                    for (Animal animal : animals_list) {
+                        if (animal.getIdNumber() == animal_id_search) {
+                            System.out.println(animal.toString());
+                        }
+                    }
+
+                    System.out.println("\nWhat information do you want to update?\n");
+
+                    System.out.println("1. Name\n");
+                    System.out.println("2. Age\n");
+                    System.out.println("3. Height\n");
+                    System.out.println("4. Weight\n");
+
+                    user_option = sn_keyboard.nextInt();
+
+                    switch (user_option) {
+                        case 1 -> {
+                            for (Animal animal : animals_list) {
+                                if (animal.getIdNumber() == animal_id_search) {
+                                    animal.setName("new_name_here");
+                                }
+                            }
+                        }
+                        case 2 -> {
+                            for (Animal animal : animals_list) {
+                                if (animal.getIdNumber() == animal_id_search) {
+                                    animal.setAge(0);
+                                }
+                            }
+                        }
+                        case 3 -> {
+                            for (Animal animal : animals_list) {
+                                if (animal.getIdNumber() == animal_id_search) {
+                                    animal.setAge(0);
+                                }
+                            }
+                        }
+                    }
+
                 }
                 case 4 -> {
                     System.out.println("\n4. Delete animal");
@@ -125,10 +167,10 @@ public class Medac_tema_7 {
                 }
                 case 6 -> {
                     System.out.println("\n6. View all\n");
-                    
-                for (Animal animal : animals_list) {
-                    System.out.println((animals_list.indexOf(animal) + 1) + ". " + animal.toString());
-                }
+
+                    for (Animal animal : animals_list) {
+                        System.out.println((animals_list.indexOf(animal) + 1) + ". " + animal.toString());
+                    }
                 }
                 case 7 -> {
                     System.out.println("\n7. End program!");

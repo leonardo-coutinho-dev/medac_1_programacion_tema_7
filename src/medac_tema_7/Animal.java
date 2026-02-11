@@ -6,17 +6,16 @@ package medac_tema_7;
  */
 /**
  *
- * @author Leonardo Coutinho dos Santos 
- * 
- * Inheritance -> is-a -> the child class is also the parent class (dog is-a animal) 
- * Composition -> has-a (strong) -> animal has-a taxonomy 
- * Aggregation -> has-a (weak) -> zoo has-a animal
- * Nested classes -> literally define a class inside the code block of another class
- * 
+ * @author Leonardo Coutinho dos Santos
+ *
+ * Inheritance -> is-a -> the child class is also the parent class (dog is-a
+ * animal) Composition -> has-a (strong) -> animal has-a taxonomy Aggregation ->
+ * has-a (weak) -> zoo has-a animal Nested classes -> literally define a class
+ * inside the code block of another class
+ *
  */
-
 public class Animal {
-    
+
     // 1) Shared counter for all animals
     private static int next_id = 1;
 
@@ -44,7 +43,7 @@ public class Animal {
     public int getIdNumber() {
         return id_number;
     }
-    
+
     public String getName() {
         return name;
     }
@@ -60,7 +59,7 @@ public class Animal {
     public double getWeight() {
         return weight;
     }
-    
+
     public Taxonomy getTaxonomy() {
         return taxonomy;
     }
@@ -81,27 +80,25 @@ public class Animal {
     public void setWeight(double weight) {
         this.weight = weight;
     }
-    
+
     // toString method
-    
     @Override
     public String toString() {
         return "ID: " + id_number + "; " + "Name: " + name + "; " + "Age: " + age + " year(s) old; " + "Height: " + height + " meter(s); " + "Weight: " + weight + " kg(s).";
     }
-    
+
     // Methods (custom)
     public void eat() {
         System.out.println("The animal is eating!");
     }
-    
-     // Methods (custom)
+
+    // Methods (custom)
     public void drink() {
         System.out.println("The animal is drinking water!");
     }
-    
+
     public void sleep() {
         System.out.println("The animal is sleeping!");
     }
-   
 
 }
