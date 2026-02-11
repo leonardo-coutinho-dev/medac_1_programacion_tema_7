@@ -16,8 +16,12 @@ package medac_tema_7;
  */
 
 public class Animal {
+    
+    // 1) Shared counter for all animals
+    private static int next_id = 1;
 
     // Attributes
+    private final int id_number;
     private String name;
     private int age;
     private double height;
@@ -28,6 +32,7 @@ public class Animal {
 
     // Constructor
     public Animal(String name, int age, double height, double weight, Taxonomy taxonomy) {
+        this.id_number = next_id++;
         this.name = name;
         this.age = age;
         this.height = height;
@@ -36,6 +41,10 @@ public class Animal {
     }
 
     // Getters - accessor methods
+    public int getIdNumber() {
+        return id_number;
+    }
+    
     public String getName() {
         return name;
     }
@@ -71,6 +80,13 @@ public class Animal {
 
     public void setWeight(double weight) {
         this.weight = weight;
+    }
+    
+    // toString method
+    
+    @Override
+    public String toString() {
+        return "ID: " + id_number + "; " + "Name: " + name + "; " + "Age: " + age + " year(s) old; " + "Height: " + height + " meter(s); " + "Weight: " + weight + " kg(s).";
     }
     
     // Methods (custom)
