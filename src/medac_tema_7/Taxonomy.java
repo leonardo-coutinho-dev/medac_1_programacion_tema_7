@@ -7,9 +7,8 @@ package medac_tema_7;
 /**
  *
  * @author Leonardo Coutinho dos Santos
- * 
+ *
  */
-
 public final class Taxonomy {
 
     // Attributes
@@ -22,9 +21,9 @@ public final class Taxonomy {
     private String genus;
     private String species;
     private String subspecies;
-    
+
     // Constructor - default 
-    public Taxonomy () {
+    public Taxonomy() {
         domain = null;
         kingdom = null;
         phylum = null;
@@ -34,7 +33,7 @@ public final class Taxonomy {
         genus = null;
         species = null;
         subspecies = null;
-    };
+    }
 
     // Constructor
     public Taxonomy(

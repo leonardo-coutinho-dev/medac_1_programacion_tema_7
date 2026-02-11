@@ -52,6 +52,12 @@ public class Medac_tema_7 {
         // Animals list variable
         ArrayList<Animal> animals_list = new ArrayList<>();
 
+        // Update variables
+        String new_name;
+        int new_age;
+        double new_height;
+        double new_weight;
+
         // Class Taxonomy variables (to add later)
         // Program
         while (running_program) {
@@ -69,7 +75,7 @@ public class Medac_tema_7 {
             // Variable to store the user option as a integer
             user_option = sn_keyboard.nextInt();
 
-            // -> Consume the line left behind (try to understand what happens under the hood)
+            // -----> CONSUMER <-----
             sn_keyboard.nextLine();
 
             // Logic of the program based on the user option
@@ -95,7 +101,7 @@ public class Medac_tema_7 {
 
                     Animal new_animal = new Animal(animal_name, animal_age, animal_height, animal_weight, new Taxonomy());
 
-                    new_animal.toString();
+                    System.out.println(new_animal.toString());
 
                     animals_list.add(new_animal);
 
@@ -130,39 +136,58 @@ public class Medac_tema_7 {
 
                     System.out.println("\nWhat information do you want to update?\n");
 
-                    System.out.println("1. Name\n");
-                    System.out.println("2. Age\n");
-                    System.out.println("3. Height\n");
+                    System.out.println("1. Name");
+                    System.out.println("2. Age");
+                    System.out.println("3. Height");
                     System.out.println("4. Weight\n");
 
                     user_option = sn_keyboard.nextInt();
 
+                    // -----> CONSUMER <-----
+                    sn_keyboard.nextLine();
+
                     switch (user_option) {
                         case 1 -> {
+                            System.out.println("What's the new name for the animal?\n");
+
+                            new_name = sn_keyboard.nextLine();
+
                             for (Animal animal : animals_list) {
                                 if (animal.getIdNumber() == animal_id_search) {
-                                    animal.setName("new_name_here");
+                                    animal.setName(new_name);
                                 }
                             }
                         }
                         case 2 -> {
+                            System.out.println("What's the new age for the animal?\n");
+
+                            new_age = sn_keyboard.nextInt();
+
                             for (Animal animal : animals_list) {
                                 if (animal.getIdNumber() == animal_id_search) {
-                                    animal.setAge(0);
+                                    animal.setAge(new_age);
                                 }
                             }
                         }
                         case 3 -> {
+                            System.out.println("What's the new height for the animal?\n");
+
+                            new_height = sn_keyboard.nextDouble();
+
                             for (Animal animal : animals_list) {
                                 if (animal.getIdNumber() == animal_id_search) {
-                                    animal.setHeight(0);
+                                    animal.setHeight(new_height);
                                 }
                             }
                         }
                         case 4 -> {
+                            System.out.println("What's the new weight for the animal?\n");
+
+                            new_weight = sn_keyboard.nextDouble();
+
                             for (Animal animal : animals_list) {
                                 if (animal.getIdNumber() == animal_id_search) {
-                                    animal.setWeight(0);
+                                    animal.setWeight(new_weight);
                                 }
                             }
                         }
